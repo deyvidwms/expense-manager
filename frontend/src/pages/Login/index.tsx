@@ -1,5 +1,7 @@
 import React from 'react';
 
+import InputText from '../../components/InputText';
+
 import style from './Login.module.scss';
 
 const Login = () => {
@@ -11,10 +13,7 @@ const Login = () => {
           <img src="" alt="" />
         </div>
 
-        <div>
-          <label htmlFor="">Login</label>
-          <input type="text" placeholder='Digite seu login' />
-        </div>
+        <InputText />
 
         <div>
           <label htmlFor="">Senha</label>
