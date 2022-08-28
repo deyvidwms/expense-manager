@@ -1,37 +1,47 @@
 import React from 'react';
 
-import InputText from '../../components/InputText';
+import InputField from '../../components/InputField';
+
+import logo from '../../assets/images/logo.svg';
 
 import style from './Login.module.scss';
 
 const Login = () => {
   return (
     <>
-      <div className='card'>
 
-        <div>
-          <img src="" alt="" />
-        </div>
+      <div className={style.content}>
 
-        <InputText 
-          label="Login"
-          placeholder="Digite seu login"
-        />
+        <div className={style.card}>
 
-        <div>
-          <label htmlFor="">Senha</label>
-          <input type="text" placeholder='Digite sua senha' />
-        </div>
+          <div className={style.logo}>
+            <img src={logo} alt="Logo do sistema" />
+          </div>
 
-        <div>
-          <button>Entrar</button>
-        </div>
+          <InputField 
+            label="Login"
+            type="text"
+            placeholder="Digite seu login aqui..."
+          />
 
-        <div>
-          <a href="./">Esqueci a senha</a>
+          <InputField
+            label="Senha"
+            type="password"
+            placeholder="Digite sua senha aqui..."
+          />
+
+          <div>
+            <button>Entrar</button>
+          </div>
+
+          <div>
+            <a href="./">Esqueci a senha</a>
+          </div>
+
         </div>
 
       </div>
+
     </>
   );
 }
