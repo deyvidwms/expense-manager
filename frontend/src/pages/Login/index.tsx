@@ -1,9 +1,8 @@
 import React from 'react';
-
 import InputField from '../../components/InputField';
+import Button from '../../components/InputField/Button';
 
 import logo from '../../assets/images/logo.svg';
-
 import style from './Login.module.scss';
 
 const Login = () => {
@@ -31,12 +30,12 @@ const Login = () => {
           />
 
           <div>
-            <button>Entrar</button>
+            <Button>Entrar</Button>
           </div>
 
-          <div>
+          {/* <div>
             <a href="./">Esqueci a senha</a>
-          </div>
+          </div> */}
 
         </div>
 
