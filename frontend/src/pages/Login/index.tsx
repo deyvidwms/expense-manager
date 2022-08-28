@@ -1,6 +1,6 @@
 import React from 'react';
 import InputField from '../../components/InputField';
-import Button from '../../components/InputField/Button';
+import Button from '../../components/Button';
 
 import logo from '../../assets/images/logo.svg';
 import style from './Login.module.scss';
