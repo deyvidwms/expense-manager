@@ -1,10 +1,17 @@
 import React from 'react';
 
-const InputText = () => {
+import style from './InputText.module.scss';
+
+interface Props {
+  label: string;
+  placeholder: string;
+}
+
+const InputText = (props: Props) => {
   return (
-    <div>
-      <label htmlFor="">Login</label>
-      <input type="text" placeholder='Digite seu login' />
+    <div className={style.inputText}>
+      <label htmlFor="">{props.label}</label>
+      <input type="text" placeholder={props.placeholder} />
     </div>
   );
 }

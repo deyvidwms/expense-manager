@@ -13,7 +13,10 @@ const Login = () => {
           <img src="" alt="" />
         </div>
 
-        <InputText />
+        <InputText 
+          label="Login"
+          placeholder="Digite seu login"
+        />
 
         <div>
           <label htmlFor="">Senha</label>
