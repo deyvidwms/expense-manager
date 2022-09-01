@@ -1,0 +1,35 @@
+.cardPrice {
+  display: flex;
+  flex-direction: column;
+
+  padding: 30px 50px;
+  margin: 10px;
+  border-radius: 6px;
+  box-shadow: 10px 10px 20px 5px rgb(127 127 127 / 35%),
+              -10px -10px 20px 5px rgb(127 127 127 / 15%);
+  transition: all ease 0.3s;
+  cursor: pointer;
+}
+
+.cardPrice > .title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #7b7b7b;
+}
+
+.cardPrice > .amountDeposit,
+.cardPrice > .expenseAmount {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.cardPrice > .amountDeposit > span,
+.cardPrice > .expenseAmount > span {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #83468C;
+  margin-top: 10px;
+  margin-right: 5px;
+}
