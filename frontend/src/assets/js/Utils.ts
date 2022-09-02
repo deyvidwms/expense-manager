@@ -10,4 +10,7 @@ export default class Utils {
 
     return valueFormatted;
   }
+  static convertToMoneyBRL(value: number) {
+    return new Intl.NumberFormat('pr-BR',{ style: 'currency', currency: 'BRL' }).format(value);
+  }
 }
