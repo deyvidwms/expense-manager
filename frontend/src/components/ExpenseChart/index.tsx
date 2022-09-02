@@ -1,5 +1,7 @@
-import React, { PureComponent } from 'react';
-import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts';
+import React from 'react';
+import { PieChart, Pie, Cell } from 'recharts';
+
+// https://recharts.org/en-US/examples/PieChartWithCustomizedLabel
 
 import style from './ExpenseChart.module.scss';
 
