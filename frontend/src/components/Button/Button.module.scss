@@ -1,0 +1,23 @@
+.button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button > button {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #FFf;
+  background-color: #83468C;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 3px;
+  transition: all ease 0.3s;
+  cursor: pointer;
+}
+
+.button > button:hover,
+.button > button:focus {
+  opacity: 0.9;
+}

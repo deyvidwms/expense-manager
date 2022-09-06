@@ -1,0 +1,19 @@
+.expenseChart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 50px 0;
+  margin: 10px;
+  border-radius: 6px;
+  box-shadow: 10px 10px 20px 5px #7f7f7f59,
+              -10px -10px 20px 5px rgb(127 127 127 / 15%);
+  transition: all ease 0.3s;
+}
+
+.expenseChart > .title {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  color: #7b7b7b;
+}

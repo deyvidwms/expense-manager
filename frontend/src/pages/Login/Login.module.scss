@@ -1,0 +1,56 @@
+.content {
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient( -90deg, #83468C 70%, #FFF 50%);
+  transition: background-image ease 0.3s;
+}
+
+.card {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  padding: 25px;
+  border-radius: 6px;
+  background-color: #FFF;
+  transform: translateY(-50%);
+  box-shadow: 10px 10px 20px 10px rgb(0 0 0 / 30%), 
+             -10px -10px 20px 10px rgb(0 0 0 / 15%);
+}
+
+.card > .logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 850px) {
+  .content {
+    background-image: initial;
+    background-color: #83468C;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card {
+    position: initial;
+    top: initial;
+    left: initial;
+    transform: translate(0);
+  }
+
+}
+
+@media (max-width: 450px) {
+  .card {
+    width: 90%;
+  }
+
+  .card > .logo > img {
+    width: 80%;
+  }
+}

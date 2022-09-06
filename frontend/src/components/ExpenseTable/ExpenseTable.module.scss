@@ -1,0 +1,157 @@
+.cardExpenseTable {
+  display: flex;
+  flex-direction: column;
+
+  padding: 0 0 15px;
+  margin: 10px;
+  border-radius: 6px;
+  box-shadow: 10px 10px 20px 5px #7f7f7f59,
+              -10px -10px 20px 5px rgb(127 127 127 / 15%);
+  transition: all ease 0.3s;
+}
+
+// datagrid
+.cardExpenseTable > .expenseTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.expenseTable > thead > tr {
+  color: #83468C;
+  border-bottom: 2px solid #83468C;
+}
+
+.expenseTable > thead > tr > th {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  text-align: start;
+  padding: 15px 30px;
+  margin-bottom: 5px;
+}
+
+.expenseTable > thead > tr > th:first-child {
+  width: 45%;
+  border-radius: 3px 0 0 3px;
+}
+
+.expenseTable > thead > tr > th:nth-child(2) {
+  width: 35%;
+  text-align: center;
+}
+
+.expenseTable > thead > tr > th:last-child {
+  width: 20%;
+  border-radius: 0 3px 3px 0;
+}
+
+.expenseTable > tbody > tr {
+  color: #000;
+}
+
+.expenseTable > tbody > tr:nth-child(2n) {
+  background-color: #E9E9E9;
+}
+
+.expenseTable > tbody > tr > td {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  text-align: start;
+
+  padding: 15px 30px;
+  margin: 10px;
+}
+
+.expenseTable > tbody > tr > td:first-child {
+  border-radius: 6px 0 0 6px;
+}
+
+.expenseTable > tbody > tr > td:nth-child(2) {
+  text-align: center;
+}
+
+.expenseTable > tbody > tr > td:last-child {
+  text-align: end;
+  border-radius: 0 6px 6px 0;
+}
+
+// pagination
+.cardExpenseTable > .pagination {
+  display: flex;
+  align-self: flex-end;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 15px;
+  margin-right: 10px;
+}
+
+.pagination > p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-right: 5px;
+
+  color: #83468C;
+}
+
+.pagination > svg {
+  fill: #83468C
+}
+
+@media (max-width: 1350px) {
+  .expenseTable > tbody > tr > td:first-child {
+    white-space: nowrap;
+    max-width: 230px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@media (max-width: 800px) {
+  .expenseTable > thead > tr > th:first-child,
+  .expenseTable > tbody > tr > td:first-child {
+    width: 60%;
+  }
+
+  .expenseTable > thead > tr > th:nth-child(2),
+  .expenseTable > tbody > tr > td:nth-child(2) {
+    display: none;
+  }  
+
+  .expenseTable > thead > tr > th:nth-child(3),
+  .expenseTable > tbody > tr > td:nth-child(3) {
+    width: 30%;
+    text-align: end;
+  }
+
+  .expenseTable > thead > tr > th:last-child,
+  .expenseTable > tbody > tr > td:last-child {
+    width: 10%;
+  }
+  
+  .cardExpenseTable > .pagination {
+    align-self: flex-start;
+    margin: 15px 0 0 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .expenseTable > thead > tr > th:first-child,
+  .expenseTable > tbody > tr > td:first-child {
+    width: 90%;
+  }
+
+  .expenseTable > thead > tr > th:nth-child(3),
+  .expenseTable > tbody > tr > td:nth-child(3) {
+    display: none;
+  }
+}
+
+@media (max-width: 430px) {
+  .expenseTable > tbody > tr > td:first-child {
+    white-space: nowrap;
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

@@ -1,0 +1,38 @@
+.cardAction {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+
+  height: 100%;
+
+  padding: 30px 50px;
+  margin: 10px;
+  border-radius: 6px;
+  box-shadow: 10px 10px 20px 5px rgb(127 127 127 / 35%),
+              -10px -10px 20px 5px rgb(127 127 127 / 15%);
+  transition: all ease 0.3s;
+  cursor: pointer;
+}
+
+.cardAction > svg {
+  font-size: 48px;
+}
+
+.cardAction > .title {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  margin-left: 10px;
+}
+
+@media (max-width: 750px) {
+  .cardAction {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 430px) {
+  .cardAction {
+    padding: 25px 20px;
+  }
+}
