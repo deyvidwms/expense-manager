@@ -33,3 +33,14 @@
   margin-top: 10px;
   margin-right: 5px;
 }
+
+@media (max-width: 430px) {
+  .cardPrice {
+    padding: 25px 20px;
+  }
+
+  .cardPrice > .amountDeposit,
+  .cardPrice > .expenseAmount {
+    font-size: 2rem;
+  }
+}

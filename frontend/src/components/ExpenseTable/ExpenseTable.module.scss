@@ -97,3 +97,61 @@
 .pagination > svg {
   fill: #83468C
 }
+
+@media (max-width: 1350px) {
+  .expenseTable > tbody > tr > td:first-child {
+    white-space: nowrap;
+    max-width: 230px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@media (max-width: 800px) {
+  .expenseTable > thead > tr > th:first-child,
+  .expenseTable > tbody > tr > td:first-child {
+    width: 60%;
+  }
+
+  .expenseTable > thead > tr > th:nth-child(2),
+  .expenseTable > tbody > tr > td:nth-child(2) {
+    display: none;
+  }  
+
+  .expenseTable > thead > tr > th:nth-child(3),
+  .expenseTable > tbody > tr > td:nth-child(3) {
+    width: 30%;
+    text-align: end;
+  }
+
+  .expenseTable > thead > tr > th:last-child,
+  .expenseTable > tbody > tr > td:last-child {
+    width: 10%;
+  }
+  
+  .cardExpenseTable > .pagination {
+    align-self: flex-start;
+    margin: 15px 0 0 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .expenseTable > thead > tr > th:first-child,
+  .expenseTable > tbody > tr > td:first-child {
+    width: 90%;
+  }
+
+  .expenseTable > thead > tr > th:nth-child(3),
+  .expenseTable > tbody > tr > td:nth-child(3) {
+    display: none;
+  }
+}
+
+@media (max-width: 430px) {
+  .expenseTable > tbody > tr > td:first-child {
+    white-space: nowrap;
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

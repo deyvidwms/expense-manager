@@ -24,3 +24,15 @@
   font-size: 1rem;
   margin-left: 10px;
 }
+
+@media (max-width: 750px) {
+  .cardAction {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 430px) {
+  .cardAction {
+    padding: 25px 20px;
+  }
+}
