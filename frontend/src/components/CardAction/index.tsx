@@ -1,18 +1,20 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import style from './CardAction.module.scss';
 
 interface Props {
   children: React.ReactNode;
-  title: String;
+  title: string;
+  link: string;
 }
 
 function CardAction(props : Props) {
   return (
-    <div className={style.cardAction}>
+    <Link to={props.link} className={style.cardAction}>
       { props.children }
       <p className={style.title}>{props.title}</p>
-    </div>
+    </Link>
   );
 }
 

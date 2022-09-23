@@ -1,0 +1,42 @@
+.breadcrumb {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px 100px;
+}
+
+.breadcrumb > .breadcrumbList {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.breadcrumb > .breadcrumbList > a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #303030;
+}
+
+.breadcrumb > .breadcrumbList > a > .breadcrumbItem,
+.breadcrumb > .breadcrumbList > a > .breadcrumbCurrentItem {
+  font-family: 'Inter', sans-serif;
+  text-transform: capitalize;
+  font-size: 1rem;
+  color: #303030;
+  cursor: pointer;
+}
+
+.breadcrumb > .breadcrumbList > a > .breadcrumbCurrentItem {
+  color: #83468C;
+  cursor: initial;
+}
+
+.breadcrumb > .breadcrumbList > a > svg {
+  margin: 0 5px;
+}
+
+.breadcrumb > .breadcrumbCurrentItemTitle {
+  font-size: 2rem;
+  font-family: 'Montserrat', sans-serif;
+}

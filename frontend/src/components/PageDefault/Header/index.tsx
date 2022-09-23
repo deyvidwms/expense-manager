@@ -3,7 +3,7 @@ import Menu from './Menu';
 
 import style from './Header.module.scss';
 
-import logo from '../../assets/images/logo.svg';
+import { ReactComponent as Logo } from 'assets/images/logo.svg';
 import { FaUserAlt } from "react-icons/fa";
 
 const Header = () => {
@@ -17,7 +17,7 @@ const Header = () => {
     <div className={style.header}>
       
       <div className={style.logo}>
-        <img src={logo} alt="Logo do projeto" />
+        <Logo />
       </div>
 
       <div className={style.userOptions} onClick={() => handleToggleMenu()}>
