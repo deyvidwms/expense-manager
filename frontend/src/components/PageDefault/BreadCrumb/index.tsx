@@ -17,6 +17,7 @@ const BreadCrumb = () => {
             <FaAngleRight />
           </Link> 
           ) : ( 
+            // eslint-disable-next-line jsx-a11y/anchor-is-valid
             <a key={index}>
               <p className={styles.breadcrumbCurrentItem}>{element}</p> 
             </a>
