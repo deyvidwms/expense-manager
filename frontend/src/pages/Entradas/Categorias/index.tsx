@@ -1,13 +1,11 @@
-import React from 'react';
-
-import InputField from '../../components/InputField';
-import Button from '../../components/Button';
+import InputField from '../../../components/InputField';
+import Button from '../../../components/Button';
 
 import { FaAngleRight, FaAngleLeft, FaPencilAlt, FaTrashAlt } from "react-icons/fa";
 
-import style from './CadastroCategoriaEntradas.module.scss';
+import style from './Categorias.module.scss';
 
-const CadastroCategoriaEntradas = () => {
+const CategoriasEntradas = () => {
   return (
     <div className={style.content}>
 
@@ -108,4 +106,4 @@ const CadastroCategoriaEntradas = () => {
   );
 }
 
-export default CadastroCategoriaEntradas;
+export default CategoriasEntradas;
