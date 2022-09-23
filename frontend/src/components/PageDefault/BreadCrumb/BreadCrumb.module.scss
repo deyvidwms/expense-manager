@@ -37,6 +37,7 @@
 }
 
 .breadcrumb > .breadcrumbCurrentItemTitle {
+  text-transform: capitalize;
   font-size: 2rem;
   font-family: 'Montserrat', sans-serif;
 }

@@ -11,29 +11,20 @@ const BreadCrumb = () => {
     <div className={styles.breadcrumb}>
       <div className={styles.breadcrumbList}>
         { caminhoBreadCrumb.map( (element, index, array) => (
-          index === 0 && index !== array.length-1 ? (
+          index < array.length-1 ? (
           <Link key={index} to={Utils.getValueOfBreadCrumb(array, index)} >
             <p className={styles.breadcrumbItem}>{element}</p>
             <FaAngleRight />
           </Link> 
           ) : ( 
-            index < array.length - 1 ? (
-              // eslint-disable-next-line jsx-a11y/anchor-is-valid
-              <a key={index}>
-                <p className={styles.breadcrumbItem}>{element}</p> 
-                <FaAngleRight />
-              </a>
-            ) : (
-              // eslint-disable-next-line jsx-a11y/anchor-is-valid
-              <a key={index}>
-                <p className={styles.breadcrumbCurrentItem}>{element}</p> 
-              </a>
-            )
+            <a key={index}>
+              <p className={styles.breadcrumbCurrentItem}>{element}</p> 
+            </a>
           )
         )) }
       </div>
 
-      <h1 className={styles.breadcrumbCurrentItemTitle}>Categorias de entradas de dinheiro</h1>
+      <h1 className={styles.breadcrumbCurrentItemTitle}>{caminhoBreadCrumb[caminhoBreadCrumb.length-1]}</h1>
 
     </div>
   )

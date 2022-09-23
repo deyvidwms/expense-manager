@@ -12,9 +12,9 @@ export default function AppRouter() {
           <Route path="/" element={<Login />} />
           <Route path="/dashboard" element={<PageDefault />}>
             <Route index element={<Dashboard />} />
-            <Route path="categorias/entradas" element={<CadastroCategoriaEntradas />} />
+            <Route path="entradas/categorias" element={<CadastroCategoriaEntradas />} />
             <Route path="entradas" element={<CadastroCategoriaEntradas />} />
-            <Route path="categorias/despesas" element={<CadastroCategoriaEntradas />} />
+            <Route path="despesas/categorias" element={<CadastroCategoriaEntradas />} />
             <Route path="despesas" element={<CadastroCategoriaEntradas />} />
           </Route>
         </Routes>

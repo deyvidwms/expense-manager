@@ -32,7 +32,7 @@ const Dashboard = () => {
 
         <div className={style.column}>
 
-          <CardAction link="/dashboard/categorias/entradas" title='Cadastrar categoria de entradas'>
+          <CardAction link="/dashboard/entradas/categorias" title='Cadastrar categoria de entradas'>
             <FaFileDownload fill='#407189' />
           </CardAction>
 
@@ -40,7 +40,7 @@ const Dashboard = () => {
 
         <div className={style.column}>
 
-          <CardAction link="/dashboard/categorias/entradas" title='Cadastrar entradas'>
+          <CardAction link="/dashboard/entradas/categorias" title='Cadastrar entradas'>
             <FaMoneyBillWave fill='#5b8936' />
           </CardAction>
 
@@ -48,7 +48,7 @@ const Dashboard = () => {
 
         <div className={style.column}>
 
-          <CardAction link="/dashboard/categorias/entradas" title='Cadastrar categoria de despesas'>
+          <CardAction link="/dashboard/entradas/categorias" title='Cadastrar categoria de despesas'>
             <BiListPlus fill='#4e70dd' />
           </CardAction>
 
@@ -56,7 +56,7 @@ const Dashboard = () => {
 
         <div className={style.column}>
 
-          <CardAction link="/dashboard/categorias/entradas" title='Cadastrar despesas'>
+          <CardAction link="/dashboard/entradas/categorias" title='Cadastrar despesas'>
             <FaCartArrowDown fill='#e3972e' />
           </CardAction>
           
