@@ -5,8 +5,11 @@ import { FaAngleRight, FaAngleLeft, FaPencilAlt, FaTrashAlt } from "react-icons/
 
 import style from './Categorias.module.scss';
 import InputColor from 'components/InputColor';
+import { useState } from 'react';
 
 const CategoriasDespesas = () => {
+  const [cor, setCor] = useState<string>("FFFFFF");
+
   return (
     <div className={style.content}>
 
@@ -27,6 +30,8 @@ const CategoriasDespesas = () => {
 
               <InputColor 
                 label='Cor da categoria'
+                cor={cor}
+                setCor={setCor}
               />
 
               <Button>Salvar</Button>
