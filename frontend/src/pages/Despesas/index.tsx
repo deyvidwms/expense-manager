@@ -1,5 +1,6 @@
 import Button from 'components/Button';
 import InputField from 'components/InputField';
+import InputFieldMoney from 'components/InputFieldMoney';
 import SelectField from 'components/SelectField';
 import { FaAngleLeft, FaAngleRight, FaPencilAlt, FaTrashAlt } from 'react-icons/fa';
 import style from './Despesas.module.scss';
@@ -36,10 +37,14 @@ const Despesas = () => {
               />
 
               {/* TODO: criar um componente para digitar valor em dinheiro */}
-              <InputField
+              {/* <InputField
                 label='Valor da despesa'
                 placeholder='Digite o valor da despesa...'
                 type='text'
+              /> */}
+              <InputFieldMoney 
+                label='Valor da despesa'
+                placeholder='Digite o valor da despesa...'
               />
 
               <Button>Salvar</Button>
