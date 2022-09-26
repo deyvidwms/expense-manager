@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { FaArrowRight, FaSearch } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 import Utils from '../../assets/js/Utils';
 
 
@@ -71,8 +72,10 @@ const ExpenseTable = () => {
       </table>
 
       <div className={style.pagination}>
-        <p>Visualizar mais</p>
-        <FaArrowRight />
+        <Link to="/dashboard/despesas">
+          <p>Visualizar mais</p>
+          <FaArrowRight />
+        </Link>
       </div>
 
     </div>

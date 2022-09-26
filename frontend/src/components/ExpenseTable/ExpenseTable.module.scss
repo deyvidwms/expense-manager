@@ -85,7 +85,12 @@
   margin-right: 10px;
 }
 
-.pagination > p {
+.pagination > a {
+  display: flex;
+  align-items: center;
+}
+
+.pagination > a > p {
   font-family: 'Inter', sans-serif;
   font-size: 0.875rem;
   font-weight: 600;
@@ -94,7 +99,7 @@
   color: #83468C;
 }
 
-.pagination > svg {
+.pagination > a > svg {
   fill: #83468C
 }
 

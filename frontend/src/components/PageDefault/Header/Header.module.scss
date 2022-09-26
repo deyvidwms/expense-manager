@@ -16,9 +16,12 @@
 
 .header > .userOptions {
   display: flex;
+  align-items: center;
   padding: 25px 40px;
-  cursor: pointer;
+  border: none;
+  background-color: transparent;
 
+  cursor: pointer;
   transition: all ease 0.3s;
 }
 
