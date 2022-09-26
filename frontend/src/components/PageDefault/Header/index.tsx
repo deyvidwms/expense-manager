@@ -3,29 +3,29 @@ import Menu from './Menu';
 
 import style from './Header.module.scss';
 
-import logo from '../../assets/images/logo.svg';
+import { ReactComponent as Logo } from 'assets/images/logo.svg';
 import { FaUserAlt } from "react-icons/fa";
 
 const Header = () => {
-  const [toggleMenu, setToggleMenu] = useState(false);
-
-  function handleToggleMenu() {
-    setToggleMenu( !toggleMenu );
-  }
+  const [aberto, setAberto] = useState(false);
 
   return (
     <div className={style.header}>
       
       <div className={style.logo}>
-        <img src={logo} alt="Logo do projeto" />
+        <Logo />
       </div>
 
-      <div className={style.userOptions} onClick={() => handleToggleMenu()}>
+      <button 
+        className={style.userOptions} 
+        onClick={() => setAberto(!aberto)}
+        // onBlur={() => setAberto(false)}
+      >
         <FaUserAlt />
         <p>ADMIN</p>
-      </div>
+      </button>
 
-      <Menu toggle={ toggleMenu ? 'on' : 'off' } />
+      <Menu aberto={aberto} setAberto={setAberto} />
     </div>
   );
 }

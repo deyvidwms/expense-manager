@@ -4,6 +4,7 @@ import Button from '../../components/Button';
 
 import logo from '../../assets/images/logo.svg';
 import style from './Login.module.scss';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   return (
@@ -30,7 +31,9 @@ const Login = () => {
           />
 
           <div>
-            <Button>Entrar</Button>
+            <Link to="dashboard">
+              <Button>Entrar</Button>
+            </Link>
           </div>
 
           {/* <div>

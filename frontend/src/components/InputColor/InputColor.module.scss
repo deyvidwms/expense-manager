@@ -1,0 +1,54 @@
+.InputColor {
+  display: flex;
+  flex-direction: column;
+}
+
+.InputColor > .label {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.125rem;
+  font-weight: bold;
+  color: #252525;
+  margin-bottom: 8px;
+}
+
+.InputColor > .colorFields {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.InputColor > .colorFields > .input:first-child {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #B8B8B8;
+  border-radius: 3px 0 0 3px;
+  transition: all ease 0.3s;}
+
+.InputColor > .colorFields > .input:last-child {
+  height: 42px;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  width: 15%;
+  border: 1px solid #B8B8B8;
+  border-left: none;
+  border-radius: 0 3px 3px 0;
+  background-color: transparent;
+  transition: all ease 0.3s;
+}
+
+.InputColor > .colorFields > .input:last-child::-webkit-color-swatch {
+  border-radius: 0 3px 3px 0;
+  border: none;
+}
+
+.InputColor > .colorFields.active > .input {
+  border-color: #83468C;
+}
+
+// .InputColor > .colorFields > .input:hover,
+// .InputColor > .colorFields > .input:focus {
+//   border-color: #83468C;
+// }

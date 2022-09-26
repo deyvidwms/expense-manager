@@ -1,6 +1,17 @@
 .content {
+  @media (max-width: 1120px) {
+    padding: 10px 50px 50px;
+  }
+
+  @media (max-width: 800px) {
+    padding: 20px 50px 50px;
+  }
+  
+  @media (max-width: 420px) {
+    padding: 20px;
+  }
   width: 100vw;
-  padding: 50px 100px;
+  padding: 10px 100px 50px;
   transition: all ease 0.3s;
 }
 
@@ -47,23 +58,11 @@
   }
 }
 
-@media (max-width: 800px) {
-  .content {
-    padding: 50px;
-  }
-}
-
 @media (max-width: 750px) {
   .content > .row:nth-child(2) {
     flex-direction: column;
   }
   .row:nth-child(2) > .column {
     width: 100%;
-  }
-}
-
-@media (max-width: 320px) {
-  .content {
-    padding: 20px;
   }
 }

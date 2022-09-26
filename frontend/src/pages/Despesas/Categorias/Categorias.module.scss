@@ -1,0 +1,223 @@
+.content {
+  @media (max-width: 1120px) {
+    padding: 10px 50px 50px;
+  }
+
+  @media (max-width: 800px) {
+    padding: 20px 50px 50px;
+  }
+  
+  @media (max-width: 420px) {
+    padding: 20px;
+  }
+  width: 100vw;
+  padding: 10px 100px 50px;
+  transition: all ease 0.3s;
+}
+
+.row {
+  @media(max-width: 980px) {
+    flex-direction: column;
+  }
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.row > .col {
+  @media(max-width: 980px) {
+    width: 100% !important;
+  }
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+
+// formulario de cadastro da categoria
+.cardCategoryRegisterForm {
+  @media (max-width: 980px) {
+    margin: 0 0 20px;
+  }
+  padding: 30px;
+  margin: 0 10px;
+  border-radius: 6px;
+  box-shadow: 10px 10px 20px 5px rgb(127 127 127 / 35%),
+              -10px -10px 20px 5px rgb(127 127 127 / 15%);
+  transition: all ease 0.3s;
+}
+
+// tabela de categorias cadastradas
+.cardCategoryEntryTable {
+  @media (max-width: 980px) {
+    margin: 0 0 20px;
+  }
+  display: flex;
+  flex-direction: column;
+
+  padding: 0 0 15px;
+  margin: 0 10px;
+  border-radius: 6px;
+  box-shadow: 10px 10px 20px 5px #7f7f7f59,
+              -10px -10px 20px 5px rgb(127 127 127 / 15%);
+  transition: all ease 0.3s;
+}
+
+// datagrid
+.cardCategoryEntryTable > .categoryEntryTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.categoryEntryTable > thead > tr {
+  color: #83468C;
+  border-bottom: 2px solid #83468C;
+}
+
+.categoryEntryTable > thead > tr > th {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  text-align: start;
+  padding: 15px 30px;
+  margin-bottom: 5px;
+}
+
+.categoryEntryTable > thead > tr > th:first-child {
+  @media (max-width: 420px) {
+    width: 100%;
+  }
+  width: 50%;
+  border-radius: 3px 0 0 3px;
+}
+
+.categoryEntryTable > thead > tr > th:nth-child(2) {
+  @media (max-width: 580px) {
+    display: none;
+  }
+  width: 40%;
+  text-align: center;
+}
+
+.categoryEntryTable > thead > tr > th:nth-child(3) {
+  width: 5%;
+  text-align: end;
+}
+
+.categoryEntryTable > thead > tr > th:last-child {
+  width: 5%;
+  border-radius: 0 3px 3px 0;
+}
+
+.categoryEntryTable > tbody > tr {
+  color: #000;
+}
+
+.categoryEntryTable > tbody > tr:nth-child(2n) {
+  background-color: #E9E9E9;
+}
+
+.categoryEntryTable > tbody > tr > td {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  text-align: start;
+
+  padding: 15px 30px;
+  margin: 10px;
+}
+
+.categoryEntryTable > tbody > tr > td:first-child {
+  border-radius: 6px 0 0 6px;
+}
+
+.categoryEntryTable > tbody > tr > td:nth-child(2) {
+  @media (max-width: 580px) {
+    display: none;
+  }
+  text-align: center;
+}
+
+.categoryEntryTable > tbody > tr > td:last-child {
+  text-align: end;
+  border-radius: 0 6px 6px 0;
+}
+
+// paginação
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination > .paginationBeforeButton,
+.pagination > .paginationAfterButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 7px;
+  border-radius: 50%;
+  background-color: #83468C;
+  opacity: 0.8;
+  color: #FFF;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+
+.pagination > .paginationBeforeButton {
+  margin-right: 10px;
+}
+
+.pagination > .paginationAfterButton {
+  margin-left: 10px;
+}
+
+.pagination > .paginationList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #83468C;
+  opacity: 0.8;
+  border-radius: 50px;
+}
+
+.pagination > .paginationList > .paginationItem {
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  padding: 6px 12px;
+  background-color: #83468C;
+  opacity: 0.8;
+  color: #FFF;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+
+.pagination > .paginationList > .paginationItem[data-active="true"] {
+  background-color: #8222a3;
+  cursor: initial;
+}
+
+.pagination > .paginationList > .paginationItem:first-child {
+  border-radius: 50px 0 0 50px;
+}
+
+.pagination > .paginationList > .paginationItem:last-child {
+  border-radius: 0 50px 50px 0;
+}
+
+.pagination > .paginationBeforeButton:hover,
+.pagination > .paginationAfterButton:hover,
+.pagination > .paginationList > .paginationItem:hover {
+  background-color: #8222a3;
+  opacity: 0.9;
+  transform: scale(1.15);
+  opacity: 1;
+  border-radius: 6px;
+  box-shadow: 0 0 5px 1px rgba(172, 23, 186, 0.45);
+  z-index: 1;
+}
+
+.pagination > .paginationList > .paginationItem[data-active="true"]:hover {
+  transform: scale(1);
+  box-shadow: none; 
+}
