@@ -7,7 +7,7 @@ const PageDefault = () => {
     <>
       <Header />
       <BreadCrumb />
-      <div>
+      <div style={{display: "flex"}}>
         <Outlet />
       </div>
     </>

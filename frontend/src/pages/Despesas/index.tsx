@@ -3,11 +3,12 @@ import InputField from 'components/InputField';
 import InputFieldMoney from 'components/InputFieldMoney';
 import SelectField from 'components/SelectField';
 import ICategoriaDespesa from 'interfaces/ICategoriaDespesa';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FaAngleLeft, FaAngleRight, FaPencilAlt, FaTrashAlt } from 'react-icons/fa';
 import style from './Despesas.module.scss';
 
 const Despesas = () => {
+  const [colspan, setColspan] = useState<number>(1);
   const [categoriasDespesas, setCategoriasDespesas] = useState<ICategoriaDespesa[]>([
     {
       id: "",
@@ -30,6 +31,17 @@ const Despesas = () => {
       value: "Outros"
     },
   ]);
+
+  useEffect(() => {
+    function setTableResponsivity() {
+      if ( window.innerWidth <= 420)
+        setColspan(5);
+      else
+        setColspan(1);
+    } 
+    setTableResponsivity();
+    window.addEventListener('resize', setTableResponsivity)
+  }, []);
 
   return (    
     <div className={style.content}>
@@ -62,12 +74,6 @@ const Despesas = () => {
                 type='text'
               />
 
-              {/* TODO: criar um componente para digitar valor em dinheiro */}
-              {/* <InputField
-                label='Valor da despesa'
-                placeholder='Digite o valor da despesa...'
-                type='text'
-              /> */}
               <InputFieldMoney 
                 label='Valor da despesa'
                 placeholder='Digite o valor da despesa...'
@@ -89,7 +95,7 @@ const Despesas = () => {
 
               <thead>
                 <tr>
-                  <th>Nome da despesa</th>
+                  <th colSpan={colspan}>Nome da despesa</th>
                   <th>Categoria</th>
                   <th>Data de criação</th>
                   <th></th>
