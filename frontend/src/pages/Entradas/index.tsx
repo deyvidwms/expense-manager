@@ -1,10 +1,31 @@
 import Button from 'components/Button';
 import InputField from 'components/InputField';
 import SelectField from 'components/SelectField';
+import ICategoriaDespesa from 'interfaces/ICategoriaDespesa';
+import { useState } from 'react';
 import { FaAngleLeft, FaAngleRight, FaPencilAlt, FaTrashAlt } from 'react-icons/fa';
 import style from './Entradas.module.scss';
 
 const Entradas = () => {
+  const [categoriasEntradas, setCategoriasEntradas] = useState<ICategoriaDespesa[]>([
+    {
+      id: "",
+      value: "Selecione uma categoria"
+    },
+    {
+      id: "1",
+      value: "Salário"
+    },
+    {
+      id: "2",
+      value: "Extras"
+    },
+    {
+      id: "3",
+      value: "Aluguel"
+    },
+  ]);
+
   return (    
     <div className={style.content}>
 
@@ -27,6 +48,7 @@ const Entradas = () => {
                 label='Nome da categoria'
                 placeholder='Escolha uma categoria'
                 id="selectCategorias"
+                data={categoriasEntradas}
               />
 
               <Button>Salvar</Button>

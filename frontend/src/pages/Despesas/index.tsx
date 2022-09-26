@@ -2,10 +2,35 @@ import Button from 'components/Button';
 import InputField from 'components/InputField';
 import InputFieldMoney from 'components/InputFieldMoney';
 import SelectField from 'components/SelectField';
+import ICategoriaDespesa from 'interfaces/ICategoriaDespesa';
+import { useState } from 'react';
 import { FaAngleLeft, FaAngleRight, FaPencilAlt, FaTrashAlt } from 'react-icons/fa';
 import style from './Despesas.module.scss';
 
 const Despesas = () => {
+  const [categoriasDespesas, setCategoriasDespesas] = useState<ICategoriaDespesa[]>([
+    {
+      id: "",
+      value: "Selecione uma categoria"
+    },
+    {
+      id: "1",
+      value: "Mercado"
+    },
+    {
+      id: "2",
+      value: "Cartão"
+    },
+    {
+      id: "3",
+      value: "Comida"
+    },
+    {
+      id: "4",
+      value: "Outros"
+    },
+  ]);
+
   return (    
     <div className={style.content}>
 
@@ -28,6 +53,7 @@ const Despesas = () => {
                 label='Nome da categoria'
                 placeholder='Escolha uma categoria'
                 id="selectCategorias"
+                data={categoriasDespesas}
               />
 
               <InputField
