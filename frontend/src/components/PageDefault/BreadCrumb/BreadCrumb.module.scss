@@ -1,4 +1,10 @@
 .breadcrumb {
+  @media(max-width: 900px) {
+    padding: 20px 50px 20px;
+  }
+  @media(max-width: 350px) {
+    padding: 10px 20px;
+  }
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -6,6 +12,9 @@
 }
 
 .breadcrumb > .breadcrumbList {
+  @media(max-width: 350px) {
+    display: none;
+  }
   display: flex;
   align-items: center;
   margin-bottom: 10px;
