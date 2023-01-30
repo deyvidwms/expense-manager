@@ -9,7 +9,7 @@
   transition: all ease 0.3s;
 }
 
-.header > .logo > img {
+.header > .logo > svg {
   width: 80%;
   transition: all ease 0.3s;
 }
@@ -42,7 +42,7 @@
 }
 
 @media (max-width: 600px) {
-  .header > .logo > img {
+  .header > .logo > svg {
     width: 50%;
   }
 
