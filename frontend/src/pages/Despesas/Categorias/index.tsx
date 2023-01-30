@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import InputField from '../../../components/InputField';
 import Button from '../../../components/Button';
 
@@ -5,14 +7,15 @@ import { FaAngleRight, FaAngleLeft, FaPencilAlt, FaTrashAlt } from "react-icons/
 
 import style from './Categorias.module.scss';
 import InputColor from 'components/InputColor';
-import { useState } from 'react';
+
+import ICategoria from 'interfaces/ICategoria';
 
 const CategoriasDespesas = () => {
   const [cor, setCor] = useState<string>("FFFFFF");
   const [categoria, setCategoria] = useState<string>('');
 
   const categoriesList = localStorage.getItem('categoriasDespesa') || null;
-  const [categorias, setCategorias] = useState<{ id: string, name: string, color: string, created_at: string }[]>(categoriesList !== null ? JSON.parse(categoriesList) : []);
+  const [categorias, setCategorias] = useState<ICategoria[]>(categoriesList !== null ? JSON.parse(categoriesList) : []);
   const [categoriaId, setCategoriaId] = useState<string>('');
 
   const handleChange = (value: string) => {
@@ -23,7 +26,7 @@ const CategoriasDespesas = () => {
     if (categoria.length > 0) {
       const localCategories = localStorage.getItem('categoriasDespesa') || null;
 
-      const index = categoriaId.length > 0 ? categorias.findIndex(element => element.id === categoriaId) : -1;
+      const index = categoriaId.length > 0 ? categorias.findIndex((element: ICategoria) => element.id === categoriaId) : -1;
 
       const currentDate = new Date();
       const createdAt = index !== -1 ? categorias[index].created_at : `${currentDate.getFullYear()}-${currentDate.getMonth() + 1}-${currentDate.getDate()}-${currentDate.getHours()}-${currentDate.getMinutes()}-${currentDate.getMilliseconds()}`;
@@ -73,15 +76,11 @@ const CategoriasDespesas = () => {
 
   }
 
-  const handleClickToEdit = (category: {
-    id: string,
-    name: string,
-    color: string,
-    created_at: string
-  }) => {
+  const handleClickToEdit = (category: ICategoria) => {
     setCategoriaId(category.id);
     setCategoria(category.name);
-    setCor(category.color);
+    if (category.color !== undefined)
+      setCor(category.color);
   }
 
   return (
@@ -174,30 +173,6 @@ const CategoriasDespesas = () => {
                       </tr>
                     )
                 }
-                {/* <tr>
-                    <td> Salário </td>
-                    <td> 06 de Set de 2022 </td>
-                    <td> <FaPencilAlt /> </td>
-                    <td> <FaTrashAlt /> </td>
-                  </tr>
-                  <tr>
-                    <td> 13º Salário </td>
-                    <td> 06 de Set de 2022 </td>
-                    <td> <FaPencilAlt /> </td>
-                    <td> <FaTrashAlt /> </td>
-                  </tr>
-                  <tr>
-                    <td> Freelas </td>
-                    <td> 06 de Set de 2022 </td>
-                    <td> <FaPencilAlt /> </td>
-                    <td> <FaTrashAlt /> </td>
-                  </tr>
-                  <tr>
-                    <td> Investimentos </td>
-                    <td> 06 de Set de 2022 </td>
-                    <td> <FaPencilAlt /> </td>
-                    <td> <FaTrashAlt /> </td>
-                  </tr> */}
               </tbody>
 
             </table>

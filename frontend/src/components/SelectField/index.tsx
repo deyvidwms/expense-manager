@@ -1,4 +1,4 @@
-import ICategoriaDespesa from 'interfaces/ICategoriaDespesa';
+import ICategoriaDespesa from 'interfaces/ICategoria';
 import style from './SelectField.module.scss';
 
 interface Props {

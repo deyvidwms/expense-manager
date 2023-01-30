@@ -7,9 +7,11 @@ import { FaAngleRight, FaAngleLeft, FaPencilAlt, FaTrashAlt } from "react-icons/
 
 import style from './Categorias.module.scss';
 
+import ICategoria from 'interfaces/ICategoria';
+
 const CategoriasEntradas = () => {
   const categoriesList = localStorage.getItem('categoriasEntrada') || null;
-  const [categorias, setCategorias] = useState<{ id: string, name: string, created_at: string }[]>(categoriesList !== null ? JSON.parse(categoriesList) : []);
+  const [categorias, setCategorias] = useState<ICategoria[]>(categoriesList !== null ? JSON.parse(categoriesList) : []);
   const [categoria, setCategoria] = useState<string>('');
   const [categoriaId, setCategoriaId] = useState<string>('');
 
@@ -21,7 +23,7 @@ const CategoriasEntradas = () => {
     if (categoria.length > 0) {
       const localCategories = localStorage.getItem('categoriasEntrada') || null;
 
-      const index = categoriaId.length > 0 ? categorias.findIndex(element => element.id === categoriaId) : -1;
+      const index = categoriaId.length > 0 ? categorias.findIndex((element: ICategoria) => element.id === categoriaId) : -1;
 
       const currentDate = new Date();
       const createdAt = index !== -1 ? categorias[index].created_at : `${currentDate.getFullYear()}-${currentDate.getMonth() + 1}-${currentDate.getDate()}-${currentDate.getHours()}-${currentDate.getMinutes()}-${currentDate.getMilliseconds()}`;
@@ -55,7 +57,7 @@ const CategoriasEntradas = () => {
 
       const tempCategories = JSON.parse(localCategories);
 
-      const index = tempCategories.findIndex( (element: { id: string, name: string, created_at: string }) => element.id === id );
+      const index = tempCategories.findIndex( (element: ICategoria) => element.id === id );
       tempCategories.splice(index, 1);
       
       localStorage.setItem('categoriasEntrada', JSON.stringify(tempCategories));
