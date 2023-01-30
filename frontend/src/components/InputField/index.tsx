@@ -6,13 +6,21 @@ interface Props {
   label: string;
   type?: "text" | "password";
   placeholder: string;
+  categoria: string;
+  handleChange: (value: string) => void;
 }
 
 const InputField = (props: Props) => {
   return (
     <div className={style.InputField}>
       <label className={style.label}>{props.label}</label>
-      <input className={style.input} type={props.type} placeholder={props.placeholder} />
+      <input 
+        className={style.input} 
+        type={props.type} 
+        placeholder={props.placeholder}
+        onChange={(event: React.ChangeEvent<HTMLInputElement>) => props.handleChange(event.target.value)}  
+        value={props.categoria}
+      />
     </div>
   );
 }
