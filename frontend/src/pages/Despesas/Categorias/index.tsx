@@ -18,10 +18,6 @@ const CategoriasDespesas = () => {
   const [categorias, setCategorias] = useState<ICategoria[]>(categoriesList !== null ? JSON.parse(categoriesList) : []);
   const [categoriaId, setCategoriaId] = useState<string>('');
 
-  const handleChange = (value: string) => {
-    setCategoria(value);
-  }
-
   const handleClick = () => {
     if (categoria.length > 0) {
       const localCategories = localStorage.getItem('categoriasDespesa') || null;
@@ -99,8 +95,8 @@ const CategoriasDespesas = () => {
                 label='Nome da categoria'
                 placeholder='Digite o nome da categoria...'
                 type='text'
-                categoria={categoria}
-                handleChange={handleChange}
+                valor={categoria}
+                setValor={setCategoria}
               />
 
               <InputColor

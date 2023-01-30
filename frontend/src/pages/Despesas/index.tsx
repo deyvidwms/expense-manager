@@ -2,35 +2,22 @@ import Button from 'components/Button';
 import InputField from 'components/InputField';
 import InputFieldMoney from 'components/InputFieldMoney';
 import SelectField from 'components/SelectField';
-import ICategoriaDespesa from 'interfaces/ICategoriaDespesa';
+import ICategoria from 'interfaces/ICategoria';
 import { useEffect, useState } from 'react';
 import { FaAngleLeft, FaAngleRight, FaPencilAlt, FaTrashAlt } from 'react-icons/fa';
 import style from './Despesas.module.scss';
 
 const Despesas = () => {
   const [colspan, setColspan] = useState<number>(1);
-  const [categoriasDespesas, setCategoriasDespesas] = useState<ICategoriaDespesa[]>([
-    {
-      id: "",
-      value: "Selecione uma categoria"
-    },
-    {
-      id: "1",
-      value: "Mercado"
-    },
-    {
-      id: "2",
-      value: "Cartão"
-    },
-    {
-      id: "3",
-      value: "Comida"
-    },
-    {
-      id: "4",
-      value: "Outros"
-    },
-  ]);
+  
+  const categoriesList = localStorage.getItem('categoriasDespesa') || null;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [categoriasDespesas, setCategoriasDespesas] = useState<ICategoria[]>(categoriesList !== null ? JSON.parse(categoriesList) : []);
+  const [tituloDespesa, setTituloDespesa] = useState('');
+  const [categoria, setCategoria] = useState('');
+  const [descricao, setDescricao] = useState('');
+  const [valor, setValor] = useState('');
+
 
   useEffect(() => {
     function setTableResponsivity() {
@@ -59,6 +46,8 @@ const Despesas = () => {
                 label='Nome da despesa'
                 placeholder='Digite o nome da despesa de dinheiro...'
                 type='text'
+                valor={tituloDespesa}
+                setValor={setTituloDespesa}
               />
 
               <SelectField 
@@ -66,20 +55,26 @@ const Despesas = () => {
                 placeholder='Escolha uma categoria'
                 id="selectCategorias"
                 data={categoriasDespesas}
+                valor={categoria}
+                setValor={setCategoria}
               />
 
               <InputField
                 label='Descrição da despesa'
                 placeholder='Descreva a despesa...'
                 type='text'
+                valor={descricao}
+                setValor={setDescricao}
               />
 
               <InputFieldMoney 
                 label='Valor da despesa'
                 placeholder='Digite o valor da despesa...'
+                valor={valor}
+                setValor={setValor}
               />
 
-              <Button>Salvar</Button>
+              <Button handleClick={()=>void(0)}>Salvar</Button>
 
             </div>
 
